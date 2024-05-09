@@ -1,0 +1,14 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate": "mkdir ../rails_codes && openapi-generator-cli generate -g ruby-on-rails -i ../openapi/openapi.yaml -o ../rails_codes"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.13.4"
+  }
+}
