@@ -9,6 +9,16 @@
 -   `./openapi/compose.yml` を `docker compose up -d --build`
 -   `./npm` で `generate`
 -   (Initial commit.)
+-   `./rails_codes/compose.yml` を `docker compose up -d --build`
+-   いくつかのエラーを修復しながら（以下例）起動を試行、随時キャッシュクリア
+    -   `Dockerfile`変更 : `gem install bundler -v 2.3.27`
+    -   `Dockerfile`上の行の次に追加 : `RUN gem update --system 3.2.3`
+    -   `Dockerfile`変更 : `bundle install`
+    -   `Dockerfile`変更 : `bin/`削除1箇所
+    -   `docker-entrypoint.sh`変更 : `bin/`削除2箇所
+    -   `Gemfile`変更 : `gem 'sqlite3', '~> 1.3.6'`
+-   (Rails up.)
+
 
 ## めも
 

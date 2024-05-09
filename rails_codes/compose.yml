@@ -1,0 +1,10 @@
+services:
+  web:
+    container_name: roropenapi-web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/myapp
+    ports:
+      - "3000:3000"

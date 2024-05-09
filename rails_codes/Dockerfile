@@ -15,9 +15,9 @@ RUN apk update && \
 WORKDIR /usr/src/myapp
 
 COPY Gemfile ./
-RUN gem install bundler
+RUN gem install bundler -v 2.3.27
 RUN bundle config build.nokogiri --use-system-libraries && \
-    bundle install --jobs=4 --retry=10 --clean
+    bundle install
 
 COPY . ./
 RUN chmod +x bin/rails
@@ -26,4 +26,4 @@ COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT ["docker-entrypoint.sh"]
 
-CMD ["bin/rails", "s", "-b", "0.0.0.0"]
+CMD ["rails", "s", "-b", "0.0.0.0"]
