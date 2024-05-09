@@ -18,7 +18,13 @@
     -   `docker-entrypoint.sh`変更 : `bin/`削除2箇所
     -   `Gemfile`変更 : `gem 'sqlite3', '~> 1.3.6'`
 -   (Rails up.)
-
+-   cors対応
+    -   `Gemfile`変更 : `gem 'rack-cors'`コメント解除
+    -   `config/initializers/cors.rb`変更 : 設定行コメント解除
+    -   `config/initializers/cors.rb`変更 : `origins 'localhost:8011', 'localhost:8012'`
+    -   `docker compose exec web bundle install`
+    -   `docker compose exec web rails restart`
+-   (Cors configuration.)
 
 ## めも
 
